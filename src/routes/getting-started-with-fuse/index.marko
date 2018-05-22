@@ -1,0 +1,52 @@
+site-layout
+  @title
+    -- App thời tiết với Fuse Studio
+  @content
+    h3.subtitle#part1 -- (phần 1: setup giao diện cơ bản)
+    h2 -- Cài đặt
+    p -- Tải về <a href="https://github.com/fusetools/fuse-releases/releases">Fuse Studio</a> cùng <a href="https://code.visualstudio.com/">VSCode</a>. Sau khi cài xong VSCode, nên cài thêm <a href="https://marketplace.visualstudio.com/items?itemName=iGN97.fuse-vscode">Fuse Extension</a>
+    p -- Nếu muốn có sản phẩm cuối cùng, cần cài Android Studio (cho android) và/hoặc XCode
+    h3 -- Tạo project
+    p -- Mở Fuse > Ấn Login (Fuse sẽ tự nâng cấp lên Fuse Studio) > New Fuse Project > Đặt tên và đường dẫn đến project
+
+    h2 -- Layout cơ bản
+    h3 -- Làm gì hôm nay ?
+    p -- Bài viết này sẽ hướng dẫn làm 1 app tối giản, 非常容易. Như hình sau:
+    div.has-text-centered
+      img src="https://i.imgur.com/C3Bt4wq.png"
+      img src="https://i.imgur.com/MukGaB6.png"
+
+    p -- Cách hoạt động: giao diện bao gồm một cây widget. Một widget có thể có nhiệm vụ render (hiển thị) một cái gì đó lên màn hình cho mình nhìn thấy (VD: Text, Rectangle...), cũng có thể để <b>sắp xếp</b> tất cả widgets con (children) theo một cách nhất định (Panel), hoặc để giữ logic code của app (VD: click vào thì làm việc X).
+
+    h3 -- Bắt tay vào design
+    p 
+      -- Mình chỉ có 3 dòng text thôi, thử tạo 3 text widgets nào và set Text value của mỗi widget thành Monday, 27 Cloudy, Ha Noi.
+      div.has-text-centered
+        img src="https://i.imgur.com/x7yEa2g.png"
+        br
+        small -- Erh, bố cục không đúng lắm
+    p
+      -- Bây giờ mình đã có 3 dòng text nhưng chúng bị đè lên nhau do "mặc định là như vậy." Thứ mình muốn là 3 widgets này đặt từ trên xuống dưới theo chiều dọc. Nếu bạn đọc về công dụng Panel ở trên và nhìn cái biểu tưởng của StackPanel thì bạn chắc biết sửa thế nào rồi! StackPanel sẽ layout tất cả con của nó theo thứ tự lần từ trên xuống dưới (hoặc từ trái sang phải cũng được). Việc bây giờ mình chỉ cần để 3 text widgets làm con của StackPanel là được.
+      div.has-text-centered
+        img src="https://i.imgur.com/YlqpZce.png"
+        br
+        small -- Nhìn đẹp hơn rồi, ít nhất đẹp hơn chữ của mình
+    p
+      -- Nhưng hiện tại cái dòng chữ bị dính vào cạnh màn hình quá. Để sửa thì bạn nhấn vào cái StackPanel vừa tạo, chỉnh sửa phần margin.
+      div.has-text-centered
+        img src="https://i.imgur.com/BqT9jNY.png"
+    p
+      -- Giờ mình muốn cái này xuống cuối màn hình. Giống như trên, mình sẽ đưa StackPanel làm con của một cái (?)Panel. Nhìn vào biểu tượng thì có thể đoán là DockPanel.
+      div.has-text-centered
+        img src="https://i.imgur.com/SJoNmp3.png"
+      -- Chữ lại dính cạnh màn hình quá. Chỉnh tiếp phần margin (bottom) như phần trên.
+    h3 -- Polishing
+    p
+      -- Cơ bản layout chỉ có vậy. Để thêm background, tạo một cái Panel là anh chị em với DockPanel (như hình trên) và nhớ là để bên dưới (nhớ về lúc 3 texts widget đè lên nhau, ở đây mình cần DockPanel đè lên Background). Rồi chọn Panel đó, vào phần thuộc tính > Style > Linear Gradient + > Chọn 2 màu (hoặc nhập #073443 #5ac8fa vào phần color). Để nó đẹp hơn, click vào từng Text widget, chỉnh font size vào text color. Và xong, chúng ta đã có một giao diện đơn giản. Để "trải nghiệm" giao diện này trên điện thoại, các bạn mở điện thoại và search Fuse Preview trên Play Store hoặc App Store rồi làm theo hướng dẫn.
+    h2 -- Phần 2 có gì ?
+    p -- Hiện tại app của chúng ta chỉ dừng lại ở phần giao diện. Trong phần tiếp theo, mình cùng làm tiếp phần dùng JavaScript để gọi lấy dữ liệu thời tiết (API) và làm giao diện thay đổi theo biến nhé (data binding).
+    h2 -- Câu hỏi ?
+    p -- Nếu bạn mắc kẹt ở đâu đó, đừng ngại liên hệ tác giả bài viết qua địa chỉ <a href="http://fb.com/quangltm">fb.com/quangltm</a>.
+
+    
+

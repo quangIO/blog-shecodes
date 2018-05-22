@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html lang="en-US">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title><include(input.title)/></title>
-</head>
-<body>
-  <header>
-    <img.logo src="./logo.png" alt="marko logo"/>
-    <h1><include(input.title)/></h1>
-    <nav.menu>
-      <a href="/">home</a>
-      <a href="/hello/routing">routes</a>
-      <a href="/layouts">layouts</a>
-    </nav>
-  </header>
-  <div.content>
-    <include(input.content)/>
-  </div>
-  </body>
-</html>
+html lang="vi-VN"
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <title>
+      <include(input.title)/>
+    </title>
+    <include(input.include)/>
+  </head>
+  body
+    br
+    br
+    h1.title.has-text-centered
+      <include(input.title)/>
+    div.container
+      <include(input.content)/>
